@@ -3,8 +3,8 @@ from .locators import ProductPageLocators
 
 
 class ProductPage(BasePage):
-    def should_be_product_added_to_cart(self):
-        self.add_to_cart()
+    def should_be_product_added_to_cart(self, should_solve_captcha=True):
+        self.add_to_cart(should_solve_captcha)
         self.should_be_product_name_equal_alert_product_name()
         self.should_be_product_price_equal_alert_basket_total()
 
