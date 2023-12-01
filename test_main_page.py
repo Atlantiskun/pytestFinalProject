@@ -5,7 +5,7 @@ from .pages.basket_page import BasketPage
 
 
 @pytest.mark.login_guest
-class TestLoginFromMainPage():
+class TestLoginFromMainPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self):
         self.link = "http://selenium1py.pythonanywhere.com/"

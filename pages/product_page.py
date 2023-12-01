@@ -3,12 +3,12 @@ from .locators import ProductPageLocators
 
 
 class ProductPage(BasePage):
-    def should_be_product_added_to_cart(self, should_solve_captcha=True):
+    def should_be_product_added_to_cart(self, should_solve_captcha=False):
         self.add_to_cart(should_solve_captcha)
         self.should_be_product_name_equal_alert_product_name()
         self.should_be_product_price_equal_alert_basket_total()
 
-    def add_to_cart(self, should_solve_captcha=True):
+    def add_to_cart(self, should_solve_captcha=False):
         button = self.browser.find_element(*ProductPageLocators.ADD_TO_CART)
         button.click()
         if should_solve_captcha:
