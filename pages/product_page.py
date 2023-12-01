@@ -1,3 +1,5 @@
+import time
+
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
@@ -27,4 +29,4 @@ class ProductPage(BasePage):
         alert_cart_total = self.browser.find_element(*ProductPageLocators.ALERT_BASKET_TOTAL)
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE)
 
-        assert alert_cart_total.text == product_price.text, "Product price and baskte total should be the same"
+        assert alert_cart_total.text == product_price.text, "Product price and basket total should be the same"
